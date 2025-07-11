@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class LessonTwo {
 
     public static void main(String[] args) {
-        printThreeWords();
+        /*printThreeWords();
         checkSumSign();
         printColor();
         compareNumbers();
@@ -16,9 +16,9 @@ public class LessonTwo {
         ninthMethod();
         tenthMethod();
         eleventhMethod();
-        twelvethMethod();
+        twelvethMethod();*/
         thirteenthMethod();
-        fourteenthMethod();
+        //fourteenthMethod();
     }
 
     public static void printThreeWords(){
@@ -185,14 +185,18 @@ public class LessonTwo {
 
     public static void  thirteenthMethod(){
         int counter = 1;
-        int[][] table = new int [10][10];
-        for (int i = 0; i < 10; i++){
-            for (int j = 0; j < 10; j++){
+        System.out.print("Введите количество строк: ");
+        Scanner scan = new Scanner(System.in);
+        int a = scan.nextInt();
+        int b = a;
+        int[][] table = new int [a][b];
+        for (int i = 0; i < a; i++){
+            for (int j = 0; j < b; j++){
                 table[i][j] = counter;
                 if(i == j){
                     table[i][j] = 1;
                 }
-                if(j == 9 - i){
+                if(j == (a - 1) - i){
                     table[i][j] = 1;
                 }
                 System.out.print(table[i][j] + " ");
