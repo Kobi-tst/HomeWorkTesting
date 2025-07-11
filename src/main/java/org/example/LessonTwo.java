@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class LessonTwo {
 
     public static void main(String[] args) {
-        /*printThreeWords();
+        printThreeWords();
         checkSumSign();
         printColor();
         compareNumbers();
@@ -16,9 +16,9 @@ public class LessonTwo {
         ninthMethod();
         tenthMethod();
         eleventhMethod();
-        twelvethMethod();*/
+        twelvethMethod();
         thirteenthMethod();
-        //fourteenthMethod();
+        fourteenthMethod();
     }
 
     public static void printThreeWords(){
