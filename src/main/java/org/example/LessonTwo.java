@@ -157,7 +157,6 @@ public class LessonTwo {
         int[] num = new int[len];
         for (int i = 0; i < len; i++){
             num[i] = initialValue;
-            //System.out.print(num[i] + " "); //Писал для себя, чтобы проверить
         }
         return num;
     }
