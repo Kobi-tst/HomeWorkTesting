@@ -9,7 +9,7 @@ public class LessonTwo {
         checkSumSign();
         printColor();
         compareNumbers();
-       /fiveMetod(10, 20);
+        fiveMetod(10, 20);
         sixthMethod(5);
         seventhMethod(-5);
         eightMethod("Строка", 5);
