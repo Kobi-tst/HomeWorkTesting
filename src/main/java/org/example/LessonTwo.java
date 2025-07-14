@@ -100,18 +100,8 @@ public class LessonTwo {
     }
 
     public static void tenthMethod(){
-        int num[] = new int [10];
-        num[0] = 1;
-        num[1] = 1;
-        num[2] = 0;
-        num[3] = 0;
-        num[4] = 1;
-        num[5] = 0;
-        num[6] = 1;
-        num[7] = 1;
-        num[8] = 0;
-        num[9] = 0;
-        for (int i = 0; i < 10; i++){
+        int num[] = { 1, 1, 0, 0, 1, 0, 1, 1, 0, 0 };
+        for (int i = 0; i < num.length; i++){
             if (num[i] == 1){
                 num[i] = 0;
             }
@@ -131,7 +121,7 @@ public class LessonTwo {
     }
 
     public static void twelvethMethod(){
-        int num[] = { 1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
+        int num[] = { 1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1 };
         for(int i = 0; i < num.length; i++){
             if(num[i] < 6){
                 num[i] = num[i]*2;
