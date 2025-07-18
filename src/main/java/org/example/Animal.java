@@ -1,8 +1,8 @@
 package org.example;
 
 public abstract class Animal {
-    String name;    //Название животного
-    public static int animalQty; //Счетчик животных
+    String name;
+    public static int animalQty;
 
     public Animal(String name) {
         this.name = name;

@@ -6,14 +6,12 @@ public class Main {
     public static void main(String[] args) {
 
         Dog dogBobik = new Dog("Бобик");
-        dogBobik.run(150);
+        dogBobik.run(350);
         dogBobik.swim(20);
 
-        Cat catBarsik = new Cat("Барсик");
-        catBarsik.run(350);
-        catBarsik.swim(20);
-
-        Cat catPushok = new Cat("Пушок");
+        Cat catBoris = new Cat("Борис");
+        catBoris.run(777);
+        catBoris.swim(20);
 
         Animal.printQuantity();
         Dog.printQuantity();

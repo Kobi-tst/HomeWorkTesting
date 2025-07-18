@@ -1,8 +1,9 @@
 package org.example;
 
 public class Dog extends Animal {
-    final static int NAX_RUN_DISTANCE = 500;
-    final static int NAX_SWIM_DISTANCE = 10;
+
+    final static int MAX_RUN_DISTANCE = 500;
+    final static int MAX_SWIM_DISTANCE = 10;
     public static int dogQty;
 
     public Dog(String name) {
@@ -13,9 +14,21 @@ public class Dog extends Animal {
         System.out.println("Собак: " + dogQty);
     }
     public void run(int distance) {
-        System.out.println(name + " пробежал " + (distance > NAX_RUN_DISTANCE ? NAX_RUN_DISTANCE : distance) + "м");
+        if (distance <= 0){
+            System.out.println(name + " не захотел бежать");
+        } else if (distance >= MAX_RUN_DISTANCE){
+            System.out.println(name + " захотел пробежать " + distance + " но смог только " + MAX_RUN_DISTANCE );
+        } else {
+            System.out.println(name + " пробежал " + (distance) + "м");
+        }
     }
     public void swim(int distance) {
-        System.out.println(name + " проплыл " + (distance > NAX_SWIM_DISTANCE ? NAX_SWIM_DISTANCE : distance) + "м");
+        if (distance <= 0){
+            System.out.println(name + " не захотел плыть");
+        } else if (distance >= MAX_SWIM_DISTANCE){
+            System.out.println(name + " захотел проплыть " + distance + " но смог только " + MAX_SWIM_DISTANCE );
+        } else {
+            System.out.println(name + " проплыл " + (distance) + "м");
+        }
     }
 }
