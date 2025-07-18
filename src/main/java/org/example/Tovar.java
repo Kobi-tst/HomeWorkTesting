@@ -20,5 +20,4 @@ public class Tovar {
     void printTovar(){
         System.out.println(name + " " + datePr + " " + producer + " " + country + " " + price + " " + status);
     }
-
 }
