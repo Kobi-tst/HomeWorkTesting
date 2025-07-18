@@ -27,5 +27,13 @@ public class Main {
             cat.eat(catsBowl);
             cat.printWellfed();
         }
+
+        // Второе задание
+        Circle circle = new Circle(2f,"Нет","Белый");
+        circle.info();
+        Triangle triangle = new Triangle(3f, 4f,5f,"Красный","Желтый");
+        triangle.info();
+        Rectangle rectangle = new Rectangle(3.1f, 3.2f,"Синий","Зеленый");
+        rectangle.info();
     }
 }
