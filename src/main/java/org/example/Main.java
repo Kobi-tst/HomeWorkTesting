@@ -10,7 +10,7 @@ public class Main {
         dogBobik.swim(20);
 
         Cat catBoris = new Cat("Борис");
-        catBoris.run(777);
+        catBoris.run(0);
         catBoris.swim(20);
 
         Animal.printQuantity();

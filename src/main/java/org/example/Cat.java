@@ -2,7 +2,7 @@ package org.example;
 
 public class Cat extends Animal {
 
-    final static int NAX_RUN_DISTANCE = 200;
+    final static int MAX_RUN_DISTANCE = 200;
     final static int DEFAULT_PORTION_SIZE = 20;
     public int portionSize;
     public static int catQty;
@@ -23,7 +23,13 @@ public class Cat extends Animal {
         System.out.println("Котов: " + catQty);
     }
     public void run(int distance) {
-        System.out.println(name + " пробежал " + (distance > NAX_RUN_DISTANCE ? NAX_RUN_DISTANCE : distance) + "м");
+        if (distance <= 0){
+            System.out.println(name + " не захотел бежать");
+        } else if (distance >= MAX_RUN_DISTANCE){
+            System.out.println(name + " захотел пробежать " + distance + " но смог только " + MAX_RUN_DISTANCE );
+        } else {
+            System.out.println(name + " пробежал " + (distance) + "м");
+        }
     }
     public void swim(int distance) {
         System.out.println(name + " не умеет плавать");
@@ -36,7 +42,6 @@ public class Cat extends Animal {
         } else {
             System.out.println(name + " не поел. Ему нужно " + portionSize + " а в миске " + bowl.foodAmount);
         }
-
     }
 
     public void printWellfed() {
