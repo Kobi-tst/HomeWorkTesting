@@ -22,7 +22,7 @@ public class Array4x4 {
             if (arr.length != 4 || arr[0].length != 4)
                 throw new MyArraySizeException("Массив не 4x4: " + arr.length + "x" + arr[0].length);
         } catch (MyArraySizeException e) {
-            System.err.println(e);
+            System.err.println();
         }
         int result = 0;
         boolean dataException = false;
@@ -36,7 +36,7 @@ public class Array4x4 {
                         throw new MyArrayDataException("В ячейке [" + i + "," + j + "] не целое число:  " + arr[i][j] + " ");
                     }
                 } catch (MyArrayDataException e) {
-                    System.err.println(e);
+                    System.err.println();
                 }
             }
         }
