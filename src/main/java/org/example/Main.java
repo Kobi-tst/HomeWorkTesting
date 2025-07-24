@@ -10,7 +10,7 @@ public class Main {
         try {
             System.out.println("Сумма элементов массива: " + Array4x4.sum(arr));
         } catch (Exception e) {
-            System.err.println();
+            System.err.println(e);
         }
         Thread.sleep(50);
 
@@ -19,7 +19,7 @@ public class Main {
         try {
             System.out.println("Сумма элементов массива: " + Array4x4.sum(arr));
         } catch (Exception e) {
-            System.err.println();
+            System.err.println(e);
         }
         Thread.sleep(50);
 
@@ -28,7 +28,7 @@ public class Main {
         try {
             System.out.println("Сумма элементов массива: " + Array4x4.sum(arr));
         } catch (Exception e) {
-            System.err.println();
+            System.err.println(e);
         }
         Thread.sleep(50);
 
@@ -37,7 +37,7 @@ public class Main {
         try {
             System.out.println("Сумма элементов массива: " + Array4x4.sum(arr));
         } catch (Exception e) {
-            System.err.println();
+            System.err.println(e);
         }
         Thread.sleep(50);
 
