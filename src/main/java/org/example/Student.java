@@ -20,7 +20,7 @@ public class Student {
         return grades;
     }
 
-    public static boolean CheckGrades(int[] grades){ // если функция возвращает true значит студент переходит на следующий курс
+    public static boolean CheckGrades(int[] grades){
         float average_mark = ((Arrays.stream(grades).sum()) / (float)grades.length);
         return average_mark >= 3;
     }
@@ -49,7 +49,7 @@ public class Student {
 
     public static void print(ArrayList<Student> students){
         for (Student student : students) {
-            System.out.print(student.name+ " " + student.course + " ");
+            System.out.print(student.name+ " course: " + student.course + "; ");
         }
         System.out.println();
     }
