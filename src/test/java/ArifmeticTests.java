@@ -10,6 +10,6 @@ public class ArifmeticTests {
 
     @Test
     void negativeCh(){
-        Assertions.assertEquals(null,Arifmetic.ch(10,0));
+        Assertions.assertEquals(0,Arifmetic.ch(10,0));
     }
 }

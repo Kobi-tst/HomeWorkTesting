@@ -15,6 +15,12 @@ public class Arifmetic {
     }
 
     public static double ch(int a, int b){
-        return (double) a / b;
+        if (b != 0){
+            return (double) a / b;
+        }
+        else {
+            System.out.println("Ошибка!");
+        }
+        return 0;
     }
 }
