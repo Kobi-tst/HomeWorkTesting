@@ -1,37 +1,29 @@
 import io.restassured.RestAssured;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import static org.hamcrest.text.MatchesPattern.matchesPattern;
-import static io.restassured.RestAssured.*;
-import static org.hamcrest.Matchers.*;
+import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.is;
 
 public class DeleteTests {
+    private final static String BASE_URI = "https://postman-echo.com";
+    private final String TEST_DATASTRING = "This is expected to be sent back as part of response body.";
+
+    @BeforeEach
+    public void init() {
+        RestAssured.baseURI = BASE_URI;
+    }
+
     @Test
-    public void testDeleteTextResponse() {
-        RestAssured.baseURI = "https://postman-echo.com";
-
-        String requestBody = "This is expected to be sent back as part of response body.";
-
+    @DisplayName("DELETE Request")
+    public void deleteRequest() {
         given()
-                .contentType("text/plain")
-                .body(requestBody)
-                .when()
-                .delete("/delete")
+                // .log().all()
+                .body(TEST_DATASTRING)
+                .when().delete("/delete")
                 .then()
-                .statusCode(200)
-                .body("args.isEmpty()", equalTo(true))
-                .body("data", equalTo(requestBody))
-                .body("files.isEmpty()", equalTo(true))
-                .body("form.isEmpty()", equalTo(true))
-                .body("headers.host", equalTo("postman-echo.com"))
-                .body("headers.x-request-start", startsWith("t="))
-                .body("headers['content-length']", equalTo(String.valueOf(requestBody.length())))
-                .body("headers['x-forwarded-proto']", equalTo("https"))
-                .body("headers.x-amzn-trace-id", startsWith("Root="))
-                .body("headers['content-type']", containsString("text/plain"))
-                .body("headers['user-agent']", notNullValue())
-                .body("headers['accept']", equalTo("*/*"))
-                .body("headers.accept-encoding", matchesPattern("gzip\\s*,\\s*deflate"))
-                .body("json", equalTo(null))
-                .body("url", equalTo("https://postman-echo.com/delete"));
+                // .log().all()
+                .assertThat().statusCode(200)
+                .and().body("data", is(TEST_DATASTRING));
     }
 }

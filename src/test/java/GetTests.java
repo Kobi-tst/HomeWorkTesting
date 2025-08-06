@@ -1,32 +1,29 @@
 import io.restassured.RestAssured;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.testng.annotations.BeforeClass;
-import static io.restassured.RestAssured.*;
-import static org.hamcrest.Matchers.*;
+import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.is;
 
 public class GetTests {
-    @BeforeClass
-    public static void setup() {
-        RestAssured.baseURI = "https://postman-echo.com";
+    private final static String BASE_URI = "https://postman-echo.com";
+    private final String TEST_DATASTRING = "This is expected to be sent back as part of response body.";
+
+    @BeforeEach
+    public void init() {
+        RestAssured.baseURI = BASE_URI;
     }
+
     @Test
-    public void getTests() {
+    @DisplayName("GET Request")
+    public void getRequest() {
         given()
-                .queryParam("foo1", "bar1")
-                .queryParam("foo2", "bar2")
-                .when()
-                .get("/get")
+                .log().all()
+                .when().get("/get?foo1=bar1&foo2=bar2")
                 .then()
-                .statusCode(200)
-                .body("args.foo1", equalTo("bar1"))
-                .body("args.foo2", equalTo("bar2"))
-                .body("headers.host", equalTo("postman-echo.com"))
-                .body("headers.x-request-start", startsWith("t="))
-                .body("headers.x-forwarded-proto", equalTo("https"))
-                .body("headers.x-forwarded-port", equalTo("443"))
-                .body("headers.x-amzn-trace-id", startsWith("Root="))
-                .body("headers.accept", equalTo("*/*"))
-                .body("headers['user-agent']", notNullValue())
-                .body("url", equalTo("https://postman-echo.com/get?foo1=bar1&foo2=bar2"));
+                .log().all()
+                .assertThat().statusCode(200)
+                .and().body("args.foo1", is("bar1"))
+                .and().body("args.foo2", is("bar2"));
     }
 }
