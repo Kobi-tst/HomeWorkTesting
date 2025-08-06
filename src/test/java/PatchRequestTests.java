@@ -2,9 +2,11 @@ import io.restassured.RestAssured;
 import org.junit.jupiter.api.Test;
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
+import static org.hamcrest.text.MatchesPattern.matchesPattern;
 
-public class PatchRequestTests { @Test
-public void testPatchTextResponse() {
+public class PatchRequestTests {
+    @Test
+    public void testPatchTextResponse() {
     RestAssured.baseURI = "https://postman-echo.com";
 
     String requestBody = "This is expected to be sent back as part of response body.";

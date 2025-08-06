@@ -1,9 +1,9 @@
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import org.junit.jupiter.api.Test;
-import org.testng.annotations.BeforeClass;
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
+import static org.hamcrest.text.MatchesPattern.matchesPattern;
 
 public class PostRequestTests {
     @Test
