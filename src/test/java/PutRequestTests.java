@@ -1,6 +1,5 @@
 import io.restassured.RestAssured;
 import org.junit.jupiter.api.Test;
-
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
 import static org.hamcrest.text.MatchesPattern.matchesPattern;

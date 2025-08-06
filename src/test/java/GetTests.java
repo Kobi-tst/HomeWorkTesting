@@ -1,4 +1,3 @@
-import org.example.*;
 import io.restassured.RestAssured;
 import org.junit.jupiter.api.Test;
 import org.testng.annotations.BeforeClass;
