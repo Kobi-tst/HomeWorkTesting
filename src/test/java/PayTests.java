@@ -89,7 +89,7 @@ public class PayTests {
         try {
             mtsHomePage.clickCancelCookie();
             mtsHomePage.setPhoneField("297777777");
-            mtsHomePage.setSumField("77");
+            mtsHomePage.setSumField("95");
             mtsHomePage.clickPayBtn();
             String actualValue = mtsHomePage.getFrameLink();
             assertEquals("https://checkout.bepaid.by/widget_v2/index.html", actualValue, name + " не открылось");
