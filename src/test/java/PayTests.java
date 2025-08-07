@@ -84,6 +84,7 @@ public class PayTests {
     void payForm() {
         String name = "Окно оплаты";
         try {
+            mtsHomePage.clickCancelCookie();
             mtsHomePage.setPhoneField("297777777");
             mtsHomePage.setSumField("77");
             mtsHomePage.clickPayBtn();

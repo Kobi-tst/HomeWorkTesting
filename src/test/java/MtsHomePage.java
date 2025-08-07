@@ -130,6 +130,13 @@ public class MtsHomePage {
     }
 
     /**
+     * Метод нажимает на кнопку отмены cookie
+     */
+    public void clickCancelCookie(){
+        cookieCancelBtn.click();
+    }
+
+    /**
      * Возвращает ссылку на фрейм
      *
      * @return ссылка на фрейм
