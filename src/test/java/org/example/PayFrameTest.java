@@ -8,18 +8,16 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
 import org.openqa.selenium.NoSuchElementException;
-//import org.openqa.selenium.WebDriver;
-//import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.WebDriver;
+
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-
-import java.util.concurrent.TimeUnit;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class PayFrameTest {
-    public static WebDriverManager driver;
+    static WebDriver driver;
     public static MtsHomePage mtsHomePage;
     public static PayFrame payFrame;
     public static final String PAGE_URL = "https://mts.by";
@@ -28,10 +26,9 @@ public class PayFrameTest {
 
     @BeforeAll
     static void before() {
-        driver = new ChromeDriver();
+        driver = WebDriverManager.chromedriver().create();
         mtsHomePage = new MtsHomePage(driver);
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         driver.get(PAGE_URL);
         mtsHomePage.clickCookieCancelBtn();
         mtsHomePage.setConnectionPhone(TEST_PHONE_NUMBER);

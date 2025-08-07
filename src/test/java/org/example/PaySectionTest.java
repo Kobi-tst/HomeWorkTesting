@@ -1,5 +1,6 @@
 package org.example;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
@@ -7,24 +8,22 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 
-import java.util.concurrent.TimeUnit;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class PaySectionTest {
-    public static WebDriver driver;
+    static WebDriver driver;
     public static MtsHomePage mtsHomePage;
     public static String PAGE_URL = "https://mts.by";
 
     @BeforeAll
     static void before() {
-        driver = new ChromeDriver();
+        driver = WebDriverManager.chromedriver().create();
         mtsHomePage = new MtsHomePage(driver);
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        //driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         driver.get(PAGE_URL);
         mtsHomePage.clickCookieCancelBtn();
     }
