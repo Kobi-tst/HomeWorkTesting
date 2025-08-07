@@ -83,7 +83,7 @@ public class PayTests {
         String name = "Окно оплаты";
             mtsHomePage.clickCancelCookie();
             mtsHomePage.setPhoneField("297777777");
-            mtsHomePage.setSumField("95");
+            mtsHomePage.setSumField("50");
             mtsHomePage.clickPayBtn();
             System.out.println(name + " открылось");
         // Ожидание загрузки фрейма
