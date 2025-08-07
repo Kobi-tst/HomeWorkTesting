@@ -91,9 +91,10 @@ public class PayTests {
             mtsHomePage.setPhoneField("297777777");
             mtsHomePage.setSumField("95");
             mtsHomePage.clickPayBtn();
+            System.out.println(name + " открылось");
         // Ожидание загрузки фрейма
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5000));
         wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.xpath("//iframe[@style='visibility: visible;'][1]")));
-        System.out.println(name + " открылось");
+
     }
 }
