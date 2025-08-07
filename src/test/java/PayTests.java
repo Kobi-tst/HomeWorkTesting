@@ -18,18 +18,13 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class PayTests {
-    WebDriver driver;
+    static WebDriver driver;
     public static MtsHomePage mtsHomePage;
     public static final String PAGE_URL = "https://www.mts.by/";
 
-    @BeforeAll
-    static void setupAll() {
-        WebDriverManager.chromedriver().setup();
-    }
-
     @BeforeEach
     void setup() {
-        driver = new ChromeDriver();
+        driver = WebDriverManager.chromedriver().create();
         mtsHomePage = new MtsHomePage(driver);
         driver.manage().window().maximize();
         driver.get(PAGE_URL);
