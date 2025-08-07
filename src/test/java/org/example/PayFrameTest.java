@@ -20,9 +20,9 @@ public class PayFrameTest {
     static WebDriver driver;
     public static MtsHomePage mtsHomePage;
     public static PayFrame payFrame;
-    public static final String PAGE_URL = "https://mts.by";
+    public static final String PAGE_URL = "https://www.mts.by";
     public static final String TEST_PHONE_NUMBER = "297777777";
-    public static final String TEST_SUM = "77.77";
+    public static final String TEST_SUM = "50";
 
     @BeforeAll
     static void before() {
