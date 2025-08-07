@@ -51,7 +51,7 @@ public class MtsHomePage {
     /**
      * Определение локатора для кнопки пополнить
      */
-    @FindBy(css = "section.pay button[type='submit']")
+    @FindBy(xpath = "//form[@id='pay-connection']//button[@type='submit']")
     private WebElement payBtn;
 
     /**
