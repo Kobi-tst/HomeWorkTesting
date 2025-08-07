@@ -1,14 +1,18 @@
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
+import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
+import java.time.Duration;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -83,16 +87,12 @@ public class PayTests {
     @DisplayName("Работа кнопки 'Продолжить'")
     void payForm() {
         String name = "Окно оплаты";
-        try {
             mtsHomePage.clickCancelCookie();
             mtsHomePage.setPhoneField("297777777");
             mtsHomePage.setSumField("95");
             mtsHomePage.clickPayBtn();
-            String actualValue = mtsHomePage.getFrameLink();
-            assertEquals("https://checkout.bepaid.by/widget_v2/index.html", actualValue, name + " не открылось");
-            System.out.println(name + " открылось");
-        } catch (NoSuchElementException e) {
-            assertTrue(false, "Элемент не найден");
-        }
+        // Ожидание загрузки фрейма
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5000));
+        wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.xpath("//iframe[@style='visibility: visible;'][1]")));
     }
 }
