@@ -94,5 +94,6 @@ public class PayTests {
         // Ожидание загрузки фрейма
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5000));
         wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.xpath("//iframe[@style='visibility: visible;'][1]")));
+        System.out.println(name + " открылось");
     }
 }
