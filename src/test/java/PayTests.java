@@ -41,6 +41,7 @@ public class PayTests {
     public void title() {
         String name = "Заголовок";
         try {
+            mtsHomePage.clickCancelCookie();
             String actualValue = mtsHomePage.getPaySectionTitle();
             assertEquals("Онлайн пополнение без комиссии", actualValue, name + " не совпадает");
             System.out.println(name + " совпадает: " + actualValue);
@@ -54,6 +55,7 @@ public class PayTests {
     @ValueSource(strings = {"visa.svg", "visa-verified.svg", "mastercard.svg", "mastercard-secure.svg", "belkart.svg"})
     void payPics(String src) {
         try {
+            mtsHomePage.clickCancelCookie();
             assertTrue(mtsHomePage.isDisplayedImg(src), "Картинка " + src + " не отображается");
             System.out.println("Картинка " + src + " отображается");
         } catch (NoSuchElementException e) {
@@ -66,6 +68,7 @@ public class PayTests {
     void detailLink() {
         String urlLink = null;
         try {
+            mtsHomePage.clickCancelCookie();
             urlLink = mtsHomePage.getLinkUrl();
             int linkResponseCode = mtsHomePage.getRespCode(urlLink);
             assertTrue(linkResponseCode < 400, "Ссылка " + urlLink + " битая (код: " + linkResponseCode + ")");
