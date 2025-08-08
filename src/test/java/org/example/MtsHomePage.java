@@ -17,7 +17,8 @@ public class MtsHomePage {
     /**
      * Определение локатора для кнопки отмены сохранения куков
      */
-    @FindBy(css = "div.cookie.show button.cookie__cancel")
+    @FindBy(xpath = "//*[contains(text(), 'Отклонить')]")
+    //@FindBy(xpath = "//*[@id="root"]/html/body/div[6]/main/div/div[2]/div/div[2]/button[2]")
     private WebElement cookieCancelBtn;
 
     /**

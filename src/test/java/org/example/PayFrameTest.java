@@ -10,7 +10,6 @@ import org.junit.jupiter.params.provider.ValueSource;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 
-
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -22,7 +21,7 @@ public class PayFrameTest {
     public static PayFrame payFrame;
     public static final String PAGE_URL = "https://www.mts.by";
     public static final String TEST_PHONE_NUMBER = "297777777";
-    public static final String TEST_SUM = "50";
+    public static final String TEST_SUM = "50.00";
 
     @BeforeAll
     static void before() {
