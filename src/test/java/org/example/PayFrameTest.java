@@ -12,6 +12,8 @@ import org.openqa.selenium.WebDriver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
+import java.util.concurrent.TimeUnit;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -29,9 +31,12 @@ public class PayFrameTest {
         mtsHomePage = new MtsHomePage(driver);
         driver.manage().window().maximize();
         driver.get(PAGE_URL);
-        mtsHomePage.clickCookieCancelBtn();
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+
         mtsHomePage.setConnectionPhone(TEST_PHONE_NUMBER);
         mtsHomePage.setСonnectionSum(TEST_SUM);
+
+        mtsHomePage.clickCookieCancelBtn();
         mtsHomePage.clickPayBtn();
         payFrame = new PayFrame(driver, mtsHomePage.payFrame);
     }

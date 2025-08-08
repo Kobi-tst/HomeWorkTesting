@@ -10,6 +10,8 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 
 
+import java.util.concurrent.TimeUnit;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -23,8 +25,9 @@ public class PayASectionTest {
         driver = WebDriverManager.chromedriver().create();
         mtsHomePage = new MtsHomePage(driver);
         driver.manage().window().maximize();
-        //driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.get(PAGE_URL);
+
         mtsHomePage.clickCookieCancelBtn();
     }
 
