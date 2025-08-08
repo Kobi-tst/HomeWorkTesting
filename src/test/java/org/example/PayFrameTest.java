@@ -94,7 +94,7 @@ public class PayFrameTest {
             "Поле ввода номера карты, Номер карты",
             "Поле ввода срока действия карты, Срок действия",
             "Поле ввода CVC, CVC",
-            "Поле ввода имени держателя, Имя держателя (как на карте)"})
+            "Поле ввода имени держателя, Имя и фамилия на карте"})
     void checkPlaceholders(String name, String expectedPlaceholder) {
         try {
             String actualPlaceholder = "";
