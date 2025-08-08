@@ -25,7 +25,7 @@ public class PayASectionTest {
         driver = WebDriverManager.chromedriver().create();
         mtsHomePage = new MtsHomePage(driver);
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        //driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.get(PAGE_URL);
 
         mtsHomePage.clickCookieCancelBtn();

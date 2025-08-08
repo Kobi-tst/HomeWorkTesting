@@ -31,7 +31,7 @@ public class PayFrameTest {
         mtsHomePage = new MtsHomePage(driver);
         driver.manage().window().maximize();
         driver.get(PAGE_URL);
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        //driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
         mtsHomePage.setConnectionPhone(TEST_PHONE_NUMBER);
         mtsHomePage.setСonnectionSum(TEST_SUM);
