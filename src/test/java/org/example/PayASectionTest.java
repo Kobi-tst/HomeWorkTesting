@@ -13,7 +13,7 @@ import org.openqa.selenium.WebDriver;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class PaySectionTest {
+public class PayASectionTest {
     static WebDriver driver;
     public static MtsHomePage mtsHomePage;
     public static String PAGE_URL = "https://mts.by";
