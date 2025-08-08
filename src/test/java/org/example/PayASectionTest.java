@@ -9,11 +9,7 @@ import org.junit.jupiter.params.provider.CsvSource;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 
-
-import java.util.concurrent.TimeUnit;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class PayASectionTest {
     static WebDriver driver;
@@ -96,7 +92,7 @@ public class PayASectionTest {
             assertEquals(actualPlaceholder, expectedPlaceholder, id + " плейсхолдер не соответствует");
             System.out.println(id + " плейсхолдер соответствует");
         } catch (NoSuchElementException e) {
-            assertTrue(false, id + " плейсхолдер не найден");
+            fail(id + " плейсхолдер не найден");
         }
     }
 }

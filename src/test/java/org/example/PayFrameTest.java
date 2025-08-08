@@ -12,10 +12,7 @@ import org.openqa.selenium.WebDriver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-import java.util.concurrent.TimeUnit;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class PayFrameTest {
     static WebDriver driver;
@@ -53,7 +50,7 @@ public class PayFrameTest {
             assertEquals(TEST_SUM + " BYN", actualValue, name + " не совпадает");
             System.out.println(name + " совпадает: " + payFrame.getPayFrameDescriptionCost());
         } catch (NoSuchElementException e) {
-            assertTrue(false, name + " не найден");
+            fail(name + " не найден");
         }
     }
     @Test
@@ -65,7 +62,7 @@ public class PayFrameTest {
             assertEquals("Оплатить " + TEST_SUM + " BYN", actualValue, name + " не совпадает");
             System.out.println(name + " совпадает: " + actualValue);
         } catch (NoSuchElementException e) {
-            assertTrue(false, name + " не найден");
+            fail(name + " не найден");
         }
     }
     @Test
@@ -77,7 +74,7 @@ public class PayFrameTest {
             assertEquals("Оплата: Услуги связи Номер:375" + TEST_PHONE_NUMBER, actualValue, name + " не совпадает");
             System.out.println(name + " совпадает: " + actualValue);
         } catch (NoSuchElementException e) {
-            assertTrue(false, name + " не найден");
+            fail(name + " не найден");
         }
     }
 
@@ -89,7 +86,7 @@ public class PayFrameTest {
             assertTrue(payFrame.isDisplayedImg(src), "Картинка " + src + " не отображается");
             System.out.println("Картинка " + src + " отображается");
         } catch (NoSuchElementException e) {
-            assertTrue(false, "Картинка " + src + " не найдена");
+            fail("Картинка " + src + " не найдена");
         }
     }
 
@@ -120,7 +117,7 @@ public class PayFrameTest {
             assertEquals(expectedPlaceholder, actualPlaceholder, name + " не совпадает");
             System.out.println(name + " совпадает: " + actualPlaceholder);
         } catch (NoSuchElementException e) {
-            assertTrue(false, name + " не найден");
+            fail(name + " не найден");
         }
     }
 }
